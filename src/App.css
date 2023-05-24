@@ -1,0 +1,27 @@
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+  overflow-x: hidden;
+} */
+
+body {
+  font-family: "Montserrat Alternates", sans-serif !important;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: rgb(157 23 77) !important ;
+}
+
+.swiper-pagination-bullet {
+  background: rgb(157 23 77) !important;
+}
+
+@media (max-width: 768px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none !important ;
+  }
+}
