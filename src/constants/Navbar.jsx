@@ -22,6 +22,8 @@ const NavItem = ({ children, isLast, to = "/", ...rest }) => {
       fontSize="xl"
       mb={{ base: isLast ? 0 : 8, sm: 0 }}
       display="block"
+      color="blue.100"
+      textDecoration="underline"
       {...rest}
     >
       <Link href={to}>{children}</Link>
@@ -61,12 +63,10 @@ const NavBar = () => {
           variant="solid"
           colorScheme="orange"
         />
-        <Image h={70} src={Logo__01_main} alt="main logo"/>
-        <Box>
-          <Button variant="solid" colorScheme="orange" mr="4">
-            Contact Now
-          </Button>
-        </Box>
+        <Image h={70} src={Logo__01_main} alt="main logo" />
+        <Button variant="solid" colorScheme="orange" mr={{md:"4"}}>
+          Contact Now
+        </Button>
       </Flex>
 
       {isOpen ? (
@@ -74,6 +74,7 @@ const NavBar = () => {
           variants={menuVariants}
           initial="hidden"
           animate={isOpen ? "visible" : "hidden"}
+          className=" backdrop-blur-xl"
         >
           <VStack
             display="block"

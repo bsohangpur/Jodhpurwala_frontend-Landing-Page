@@ -33,10 +33,10 @@ const Footer = () => {
             Sri Jodhpur Mithai Ghar
           </Text>
           <Text fontSize={{ base: "sm", lg: "md" }}>
-            A one-stop-shop forall your Rajasthan sweet needs!
+            A one-stop-shop for all your Rajasthan sweet needs!
             <br />
-            We offer a wide variety of authentic sweets from Rajasthan, made
-            with the finest ingredients and traditional recipes.
+            Currently, we manufacture 200+ varieties of delicacies in Pure Desi
+            Ghee Preparation
           </Text>
         </Stack>
         <Flex

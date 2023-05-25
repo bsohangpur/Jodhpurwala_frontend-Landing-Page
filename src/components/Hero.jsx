@@ -16,7 +16,8 @@ import {
 import "swiper/swiper-bundle.css";
 import { sweets } from "../data";
 import { MdStar } from "react-icons/md";
-import {Navbar} from '../constants'
+import { Navbar } from "../constants";
+import { bg_assets, bg_assets_2, hero_img } from "../assets";
 
 SwiperCore.use([Navigation, Pagination, Autoplay]);
 
@@ -28,78 +29,72 @@ const Hero = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      bg="url(https://img.freepik.com/free-photo/top-view-sugar-candies-with-little-buns-white-desk_140725-66702.jpg?w=900&t=st=1684930972~exp=1684931572~hmac=bc7fd9318f441affcefc6024156125a367976759c09866c08917b36a68526f3e)"
+      position="relative"
       bgRepeat="no-repeat"
       bgSize="cover"
-      borderRadius={5}
+      borderRadius={{md:5}}
+      id="hero"
+      minH="100vh"
     >
+      <Image
+        className=" z-0 absolute w-full h-full top-0 left-0"
+        src={bg_assets}
+        alt="bg_1"
+      />
+      <Image
+        className="absolute z-0 w-full h-full top-0 left-0"
+        src={bg_assets_2}
+        alt="bg_2"
+      />
       <Navbar />
-      <Swiper
-        spaceBetween={50}
-        slidesPerView={1}
-        navigation
-        autoplay
-        pagination={{ clickable: true }}
-      >
-        {sweets.map((sweet, index) => (
-          <SwiperSlide key={index} className="flex justify-center items-center">
-            <MotionBox
-              initial={{ x: "-100vw" }}
-              animate={{ x: 0 }}
-              transition={{ duration: 1 }}
-              className="w-[90%] min-h-[80vh] mt-4 mb-8 shadow-xl rounded-md backdrop-blur-sm flex justify-center items-center"
+      <Box className="m-6 px-2 py-6  backdrop-blur-sm z-50 ">
+        <Flex flexWrap='wrap' justifyContent="center" alignItems="center">
+          <Box w={{ base: "100%", md: "50%" }} className=" text-left">
+            <Heading
+              my={2}
+              as="h1"
+              fontWeight="bold"
+              size="2xl"
+              className="hero_first_head"
             >
-              <Box py={10} className="  ">
-                <Container maxW="container.xl">
-                  <Flex
-                    direction={{ base: "column", lg: "row" }}
-                    alignItems="center"
-                  >
-                    <Box flex="1" mr={{ lg: "10" }}>
-                      <Image src={sweet.image} alt={sweet.name} />
-                    </Box>
-                    <Box flex="1" className="flex flex-col items-start">
-                      <Heading
-                        as="h2"
-                        fontSize={{ base: "3xl", lg: "4xl" }}
-                        mb={4}
-                      >
-                        {sweet.name}
-                      </Heading>
-                      <Text
-                        textAlign="left"
-                        fontSize={{ base: "xl", lg: "2xl" }}
-                        mb={6}
-                      >
-                        {sweet.description}
-                      </Text>
-                      <Flex mt={2} align="center">
-                        <Box as={MdStar} color="orange.400" />
-                        <Text ml={1} fontSize="sm">
-                          <Badge colorScheme="pink" mr={2}>
-                            {sweet.rating}
-                          </Badge>
-                          ({sweet.reviews})
-                        </Text>
-                      </Flex>
-                    </Box>
-                  </Flex>
-                </Container>
-              </Box>
-            </MotionBox>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-      <Button
-        as={Link}
-        href=""
-        colorScheme="orange"
-        variant="solid"
-        size="lg"
-        my={6}
-      >
-        Learn More
-      </Button>
+              Enjoy Our{" "}
+            </Heading>
+            <Heading my={2} as="h2" color="red.50" size="2xl">
+              <span className="text-orange-500">Spacial</span> Sweets
+            </Heading>
+            <Heading
+              my={2}
+              as="h3"
+              textTransform="capitalize"
+              color="orange.50"
+              size="lg"
+            >
+              Wide variety of sweets available throughout India
+            </Heading>
+            <Text color="orange.50">
+              We guarantee that by following the traditional and genuine methods
+              of preparing sweets we give healthy goodness.
+            </Text>
+            <Button
+              onClick={() => {
+                const section = document.getElementById("sweets");
+                if (section) {
+                  section.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+              colorScheme="orange"
+              variant="solid"
+              size="lg"
+              my={6}
+            >
+              Learn More
+            </Button>
+          </Box>
+          <Box w={{ base: "100%", md: "50%" }}>
+            <Image src={hero_img} alt="hero image" />
+          </Box>
+        </Flex>
+      </Box>
     </MotionBox>
   );
 };

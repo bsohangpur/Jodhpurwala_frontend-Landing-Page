@@ -4,6 +4,7 @@ import Sweets from './Sweets';
 import Contact from './Contact';
 import Reviews from './Reviews';
 import Timing from './Timing';
+import KnowMore from './KnowMore';
 
 export {
     About,
@@ -12,5 +13,6 @@ export {
     Contact,
     Reviews,
     Timing,
+    KnowMore,
     
 }

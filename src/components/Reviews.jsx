@@ -36,11 +36,11 @@ const ReviewCard = ({ review }) => {
 
 const Reviews = () => {
   return (
-    <Box maxW="800px" mx="auto" my={16}>
+    <Box maxW="5xl" mx="auto">
       <Heading
         textTransform="capitalize"
         as="h2"
-        my={10}
+        my={6}
         size="lg"
         textAlign="center"
       >

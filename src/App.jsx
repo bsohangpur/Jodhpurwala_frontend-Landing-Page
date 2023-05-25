@@ -1,7 +1,15 @@
 import { Box, ChakraProvider } from "@chakra-ui/react";
 import "./App.css";
-import { Navbar, Footer } from "./constants";
-import { Hero, About, Sweets, Contact, Reviews, Timing } from "./components";
+import { Footer } from "./constants";
+import {
+  Hero,
+  About,
+  Sweets,
+  Contact,
+  Reviews,
+  Timing,
+  KnowMore,
+} from "./components";
 
 function App() {
   return (
@@ -14,6 +22,7 @@ function App() {
         <Sweets />
         <Contact />
         <Reviews />
+        <KnowMore />
         <Footer />
       </Box>
     </ChakraProvider>

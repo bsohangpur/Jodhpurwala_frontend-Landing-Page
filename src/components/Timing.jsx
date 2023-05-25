@@ -15,7 +15,7 @@ const Timing = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex gap-4 justify-center items-center"
+          className="flex flex-col md:flex-row gap-4 justify-center items-center"
         >
           <Box
             display="inline-block"
@@ -49,9 +49,26 @@ const Timing = () => {
             </Flex>
             <Text>8:00 AM – 6:00 PM</Text>
           </Box>
-          <ShopClosingTimer openingTime={new Date().setHours(8)} closingTime={new Date().setHours(22)} />
         </motion.div>
       </Flex>
+      <Box
+        display="inline-block"
+        bg="orange.400"
+        borderRadius="md"
+        padding="1rem"
+        flex="1"
+        w="300px"
+        my={4}
+      >
+        <Flex alignItems="center" mb={2}>
+          <Box as={FaClock} fontSize="lg" color="white" mr={2} />
+          <ShopClosingTimer
+            openingTime={new Date().setHours(8)}
+            closingTime={new Date().setHours(22)}
+          />
+        </Flex>
+        <Text>8:00 AM – 6:00 PM</Text>
+      </Box>
     </Box>
   );
 };

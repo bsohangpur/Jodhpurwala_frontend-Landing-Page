@@ -25,3 +25,26 @@ body {
     display: none !important ;
   }
 }
+
+#hero {
+  background: linear-gradient(45deg, #ff007f, #7f00ff, #007fff);
+  background-size: 600% 600%;
+  animation: gradientAnimation 10s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.hero_first_head {
+  -webkit-text-stroke: 2px #fff; /* For WebKit browsers (Chrome, Safari) */
+  -webkit-text-fill-color: transparent; /* For WebKit browsers (Chrome, Safari) */
+}

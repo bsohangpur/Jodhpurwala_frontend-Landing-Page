@@ -7,7 +7,6 @@ import {
   Image,
   Flex,
   Button,
-  useBreakpointValue,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 // import sweetImage from "./rajasthan-sweets.jpg";
@@ -22,11 +21,12 @@ const About = () => {
     transition: { duration: 0.5 },
   };
 
-  const buttonSize = useBreakpointValue({ base: "sm", md: "md" });
-
   return (
     <Box bg="pink.50" py={{ base: 12, md: 20 }}>
       <Container maxW="container.xl">
+        <Heading display={{base:'block', md:'none'}} as="h2" size="xl" mb={4}>
+          About Us
+        </Heading>
         <Flex direction={{ base: "column", md: "row" }} alignItems="center">
           <Box
             flex="1"
@@ -35,19 +35,18 @@ const About = () => {
             order={{ base: 2, md: 1 }}
           >
             <motion.div {...variantProps}>
-              <Heading as="h2" size="xl" mb={4}>
+              <Heading display={{base:'none', md:'block'}} as="h2" size="xl" mb={4}>
                 About Us
               </Heading>
               <Text fontSize="lg" mb={8}>
-                We are a family-owned business that has been making and serving
-                the best sweets in Rajasthan for over 50 years. Our sweets are
-                made with the finest ingredients and are prepared using
-                traditional recipes that have been passed down through
-                generations.
+                The secret behind JODHPURWALA premium quality products lies in
+                its uncompromising attitude of using good-quality ingredients
+                and striving into constant R&D practice to achieve the best
+                flavor in all its offerings. We guarantee that by following the
+                traditional and genuine methods of preparing sweets we give
+                healthy goodness.
               </Text>
-              <Button size={buttonSize} colorScheme="green">
-                Learn More
-              </Button>
+              <Button colorScheme="green">Learn More</Button>
             </motion.div>
           </Box>
           <Box flex="1" order={{ base: 1, md: 2 }}>
@@ -57,6 +56,7 @@ const About = () => {
                 alt="Rajasthan Sweets"
                 borderRadius="md"
                 boxShadow="md"
+                mb={{base:4, md:0}}
               />
             </motion.div>
           </Box>
