@@ -6,8 +6,10 @@ import {
   Text,
   IconButton,
   useColorModeValue,
+  Button,
 } from "@chakra-ui/react";
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
+import { links } from "../data";
 
 const Footer = () => {
   return (
@@ -48,14 +50,28 @@ const Footer = () => {
             mb={{ base: 8, lg: 0 }}
             mr={{ lg: 8 }}
             textAlign={{ base: "center", lg: "left" }}
+            className="flex flex-col items-start"
           >
             <Text fontWeight="bold" fontSize={{ base: "xl", lg: "2xl" }}>
               Quick Links
             </Text>
-            <Text fontSize={{ base: "sm", lg: "md" }}>Home</Text>
-            <Text fontSize={{ base: "sm", lg: "md" }}>About Us</Text>
-            <Text fontSize={{ base: "sm", lg: "md" }}>Products</Text>
-            <Text fontSize={{ base: "sm", lg: "md" }}>Contact Us</Text>
+            {links.map(({ link, name }) => (
+              <Button
+                variant="link"
+                key={link}
+                color='pink.800'
+                textTransform='capitalize'
+                onClick={() => {
+                  const section = document.getElementById(link);
+                  if (section) {
+                    section.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+                fontSize={{ base: "sm", lg: "md" }}
+              >
+                {name}
+              </Button>
+            ))}
           </Stack>
           <Stack
             spacing={4}

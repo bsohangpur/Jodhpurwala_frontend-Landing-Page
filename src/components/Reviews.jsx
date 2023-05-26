@@ -36,7 +36,7 @@ const ReviewCard = ({ review }) => {
 
 const Reviews = () => {
   return (
-    <Box maxW="5xl" mx="auto">
+    <Box id="review" maxW="5xl" mx="auto">
       <Heading
         textTransform="capitalize"
         as="h2"

@@ -15,6 +15,7 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { MdClose } from "react-icons/md";
 import { motion } from "framer-motion";
 import { Logo__01_main } from "../assets";
+import { links } from "../data";
 
 const NavItem = ({ children, isLast, to = "/", ...rest }) => {
   return (
@@ -22,11 +23,21 @@ const NavItem = ({ children, isLast, to = "/", ...rest }) => {
       fontSize="xl"
       mb={{ base: isLast ? 0 : 8, sm: 0 }}
       display="block"
-      color="blue.100"
-      textDecoration="underline"
       {...rest}
     >
-      <Link href={to}>{children}</Link>
+      <Button
+        onClick={() => {
+          const section = document.getElementById(to);
+          if (section) {
+            section.scrollIntoView({ behavior: "smooth" });
+          }
+        }}
+        color="blue.100"
+        variant="link"
+        textTransform="capitalize"
+      >
+        {children}
+      </Button>
     </Text>
   );
 };
@@ -64,7 +75,7 @@ const NavBar = () => {
           colorScheme="orange"
         />
         <Image h={70} src={Logo__01_main} alt="main logo" />
-        <Button variant="solid" colorScheme="orange" mr={{md:"4"}}>
+        <Button variant="solid" colorScheme="orange" mr={{ md: "4" }}>
           Contact Now
         </Button>
       </Flex>
@@ -83,20 +94,11 @@ const NavBar = () => {
             sx={{ "& > *": { w: "full" } }}
             py={4}
           >
-            <MotionBox variants={menuVariants}>
-              <NavItem to={"/"}>Home</NavItem>
-            </MotionBox>
-            <MotionBox variants={menuVariants}>
-              <NavItem to={"/about"}>About</NavItem>
-            </MotionBox>
-            <MotionBox variants={menuVariants}>
-              <NavItem to={"/products"}>Products</NavItem>
-            </MotionBox>{" "}
-            <MotionBox variants={menuVariants}>
-              <NavItem to={"/contact"} isLast>
-                Contact
-              </NavItem>
-            </MotionBox>
+            {links.map(({ link, name }) => (
+              <MotionBox key={link} variants={menuVariants}>
+                <NavItem to={link}>{name}</NavItem>
+              </MotionBox>
+            ))}
           </VStack>
         </MotionBox>
       ) : null}

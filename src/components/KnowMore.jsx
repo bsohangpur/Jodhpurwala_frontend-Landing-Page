@@ -5,7 +5,7 @@ const MotionBox = motion(Box);
 
 function KnowMore() {
   return (
-    <Box textAlign="center" mb={6} p={4}>
+    <Box id="know_more" textAlign="center" mb={6} p={4}>
       <Flex direction="column" align="center" justify="center">
         <MotionBox
           initial={{ opacity: 0, y: -50 }}

@@ -6,7 +6,7 @@ import ShopClosingTimer from "./TimeProps";
 
 const Timing = () => {
   return (
-    <Box padding="2rem">
+    <Box id="timing" padding="2rem">
       <Heading as="h2" size="xl" mb={8} textAlign="center">
         Shop Timings
       </Heading>

@@ -22,9 +22,14 @@ const About = () => {
   };
 
   return (
-    <Box bg="pink.50" py={{ base: 12, md: 20 }}>
+    <Box id="about" bg="pink.50" py={{ base: 12, md: 20 }}>
       <Container maxW="container.xl">
-        <Heading display={{base:'block', md:'none'}} as="h2" size="xl" mb={4}>
+        <Heading
+          display={{ base: "block", md: "none" }}
+          as="h2"
+          size="xl"
+          mb={4}
+        >
           About Us
         </Heading>
         <Flex direction={{ base: "column", md: "row" }} alignItems="center">
@@ -35,7 +40,12 @@ const About = () => {
             order={{ base: 2, md: 1 }}
           >
             <motion.div {...variantProps}>
-              <Heading display={{base:'none', md:'block'}} as="h2" size="xl" mb={4}>
+              <Heading
+                display={{ base: "none", md: "block" }}
+                as="h2"
+                size="xl"
+                mb={4}
+              >
                 About Us
               </Heading>
               <Text fontSize="lg" mb={8}>
@@ -46,7 +56,17 @@ const About = () => {
                 traditional and genuine methods of preparing sweets we give
                 healthy goodness.
               </Text>
-              <Button colorScheme="green">Learn More</Button>
+              <Button
+                onClick={() => {
+                  const section = document.getElementById("know_more");
+                  if (section) {
+                    section.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+                colorScheme="green"
+              >
+                Learn More
+              </Button>
             </motion.div>
           </Box>
           <Box flex="1" order={{ base: 1, md: 2 }}>
@@ -56,7 +76,7 @@ const About = () => {
                 alt="Rajasthan Sweets"
                 borderRadius="md"
                 boxShadow="md"
-                mb={{base:4, md:0}}
+                mb={{ base: 4, md: 0 }}
               />
             </motion.div>
           </Box>

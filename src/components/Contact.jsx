@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const Contact = () => {
   return (
-    <Box>
+    <Box id="contact">
       <Heading as='h1' my={4}>
         Contact Us
       </Heading>

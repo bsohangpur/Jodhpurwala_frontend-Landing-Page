@@ -1,23 +1,27 @@
 const links = [
     {
       name: "home",
-      link: "#"
+      link: "hero"
     },
     {
-      name: "about us",
-      link: "#"
+      name: "about",
+      link: "about"
     },
     {
-      name: "contact us",
-      link: "#"
+      name: "product",
+      link: "sweets"
     },
     {
-      name: "pricing",
-      link: "#"
+      name: "contact",
+      link: "contact"
     },
     {
-      name: "tracking",
-      link: "#"
+      name: "timing",
+      link: "timing"
+    },
+    {
+      name: "review",
+      link: "review"
     }
   ];
 
