@@ -5,6 +5,10 @@ import { FaClock } from "react-icons/fa";
 import ShopClosingTimer from "./TimeProps";
 
 const Timing = () => {
+
+  const now = new Date().getDay()
+  const closingTime = now === 0 ? new Date().setHours(18) : new Date().setHours(22)
+
   return (
     <Box id="timing" padding="2rem">
       <Heading as="h2" size="xl" mb={8} textAlign="center">
@@ -60,14 +64,13 @@ const Timing = () => {
         w="300px"
         my={4}
       >
-        <Flex alignItems="center" mb={2}>
+        <Flex alignItems="center" mb={2} gap={4}>
           <Box as={FaClock} fontSize="lg" color="white" mr={2} />
           <ShopClosingTimer
             openingTime={new Date().setHours(8)}
-            closingTime={new Date().setHours(22)}
+            closingTime={closingTime}
           />
         </Flex>
-        <Text>8:00 AM – 6:00 PM</Text>
       </Box>
     </Box>
   );

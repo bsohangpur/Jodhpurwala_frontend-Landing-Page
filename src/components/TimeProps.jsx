@@ -30,9 +30,9 @@ const ShopClosingTimer = ({ openingTime, closingTime }) => {
         setIsOpen(false);
         // Calculate the time remaining until opening
         const timeDiff = opening - now;
-        const hours = Math.floor(timeDiff / (1000 * 60 * 60));
-        const minutes = Math.floor((timeDiff / (1000 * 60)) % 60);
-        const seconds = Math.floor((timeDiff / 1000) % 60);
+        const hours = Math.floor((timeDiff / (1000 * 60 * 60))+24);
+        const minutes = Math.floor(((timeDiff / (1000 * 60)) % 60)+60);
+        const seconds = Math.floor(((timeDiff / 1000) % 60)+60);
 
         // Format the remaining time
         const formattedTime = `${hours.toString().padStart(2, "0")}:${minutes

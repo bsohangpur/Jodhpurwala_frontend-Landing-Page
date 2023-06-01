@@ -17,7 +17,8 @@ import { motion } from "framer-motion";
 import { Logo__01_main } from "../assets";
 import { links } from "../data";
 
-const NavItem = ({ children, isLast, to = "/", ...rest }) => {
+const NavItem = ({ children, isLast, onCLose, to = "/", ...rest }) => {
+  
   return (
     <Text
       fontSize="xl"
@@ -31,6 +32,7 @@ const NavItem = ({ children, isLast, to = "/", ...rest }) => {
           if (section) {
             section.scrollIntoView({ behavior: "smooth" });
           }
+          onCLose()
         }}
         color="blue.100"
         variant="link"
@@ -63,7 +65,7 @@ const NavBar = () => {
   };
 
   return (
-    <Box px={4}>
+    <Box px={4} className=" backdrop-blur-lg">
       <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
         <IconButton
           size={"md"}
@@ -75,17 +77,16 @@ const NavBar = () => {
           colorScheme="orange"
         />
         <Image h={70} src={Logo__01_main} alt="main logo" />
-        <Button variant="solid" colorScheme="orange" mr={{ md: "4" }}>
+        <Button as={Link} href="tel:+91 9069190191" variant="solid" colorScheme="orange" mr={{ md: "4" }}>
           Contact Now
         </Button>
       </Flex>
-
       {isOpen ? (
         <MotionBox
           variants={menuVariants}
           initial="hidden"
           animate={isOpen ? "visible" : "hidden"}
-          className=" backdrop-blur-xl"
+          
         >
           <VStack
             display="block"
@@ -96,7 +97,7 @@ const NavBar = () => {
           >
             {links.map(({ link, name }) => (
               <MotionBox key={link} variants={menuVariants}>
-                <NavItem to={link}>{name}</NavItem>
+                <NavItem onCLose={onClose} to={link}>{name}</NavItem>
               </MotionBox>
             ))}
           </VStack>

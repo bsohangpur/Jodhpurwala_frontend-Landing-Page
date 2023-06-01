@@ -91,7 +91,7 @@ const Hero = () => {
             </Button>
           </Box>
           <Box w={{ base: "100%", md: "50%" }}>
-            <Image src={hero_img} alt="hero image" />
+            <Image w='100%' src={hero_img} alt="hero image" />
           </Box>
         </Flex>
       </Box>

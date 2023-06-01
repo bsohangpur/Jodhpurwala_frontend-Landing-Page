@@ -14,8 +14,8 @@ import { links } from "../data";
 const Footer = () => {
   return (
     <Box
-      bg={useColorModeValue("pink.100", "pink.900")}
-      color={useColorModeValue("pink.800", "pink.200")}
+      bg={useColorModeValue("orange.500")}
+      color={useColorModeValue("orange.50")}
     >
       <Box
         mx="auto"
@@ -59,7 +59,7 @@ const Footer = () => {
               <Button
                 variant="link"
                 key={link}
-                color='pink.800'
+                color='orange.50'
                 textTransform='capitalize'
                 onClick={() => {
                   const section = document.getElementById(link);
@@ -102,7 +102,9 @@ const Footer = () => {
               <IconButton
                 colorScheme="facebook"
                 aria-label="Facebook"
-                variant="outline"
+                variant="solid"
+                borderRadius={10}
+                shadow='lg'
                 icon={<FaFacebook size="30px" />}
                 size="lg"
                 mr="4"
@@ -110,7 +112,9 @@ const Footer = () => {
               <IconButton
                 colorScheme="pink"
                 aria-label="Instagram"
-                variant="outline"
+                variant="solid"
+                borderRadius={10}
+                shadow='lg'
                 icon={<FaInstagram size="30px" />}
                 size="lg"
                 mr="4"
@@ -118,7 +122,9 @@ const Footer = () => {
               <IconButton
                 colorScheme="twitter"
                 aria-label="Twitter"
-                variant="outline"
+                variant="solid"
+                borderRadius={10}
+                shadow='lg'
                 icon={<FaTwitter size="30px" />}
                 size="lg"
                 mr="4"
@@ -126,7 +132,9 @@ const Footer = () => {
               <IconButton
                 colorScheme="red"
                 aria-label="Youtube"
-                variant="outline"
+                variant="solid"
+                borderRadius={10}
+                shadow='lg'
                 icon={<FaYoutube size="30px" />}
                 size="lg"
               />
